@@ -1,7 +1,10 @@
 .nav-bar {
   background-color: #4056A1;
   height: 120px;
+  width: 100%;
   color: #ffffff;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
 }

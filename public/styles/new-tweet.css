@@ -1,0 +1,41 @@
+.new-tweet {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.tweetBox {
+  border-bottom: solid 0.20em #2e2c28;
+  font-weight: 600;
+}
+
+button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: 'Bungee', cursive;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content:space-between;
+  margin-top: 2%;
+}
+
+output {
+  font-family: 'Bungee', cursive;
+}
+
+textarea {
+  background-color : #f4f1ec; 
+  border: transparent;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
+}
