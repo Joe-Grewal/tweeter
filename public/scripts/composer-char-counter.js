@@ -1,3 +1,15 @@
 $(document).ready(function() {
-  // --- our code goes here ---
+  const tweet = document.getElementById("tweet-text");
+
+  tweet.addEventListener("input", function() {
+    let numOfChars = (140 - $(this).val().length);
+    let counter = $(this).closest('form').children('.buttonBox').children('.counter');
+
+    if (numOfChars < 0) {
+      counter.addClass('exceedCharLimit');
+    } else {
+      counter.removeClass('exceedCharLimit');
+    }
+    counter.html(numOfChars);
+  });
 });
