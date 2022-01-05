@@ -1,18 +1,17 @@
 .header {
   height: 400px;
   width: 100%;
-  /* background-color: #f7e2b5; */
   background-color: #cfabaa;
   background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: column wrap;
+  flex-direction: column;
 }
 
 .avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: column wrap;
+  flex-direction: column;
 }

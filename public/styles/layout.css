@@ -34,3 +34,67 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+article {
+  padding: 2% 1%;
+  border: solid 0.2em #2e2c28;
+  margin-bottom: 5%;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 3%;
+}
+
+.userAvatar {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#firstName {
+  margin-left: 0.5em;
+}
+
+#userName {
+  color: #2e2c28;
+}
+
+.tweetText {
+  margin-left: 2%;
+  margin-right: 2%;
+  font-weight: 400;
+}
+
+article.tweet footer {
+  border-top: solid 0.20em #2e2c28;
+}
+
+.icons {
+  color: #304588;
+}
+
+.contentFooter {
+  margin-right: 2%;
+  margin-left: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+}
+
+article.tweet img {
+  height: 100%;
+  max-width: 100vw;
+}
+
+article:hover {
+  box-shadow: 0.3em 0.3em #b2bcd6;
+}
+
+div .icons .fas:hover {
+  color: #bec030
+}
