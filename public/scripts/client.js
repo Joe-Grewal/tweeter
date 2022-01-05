@@ -88,3 +88,13 @@ const renderTweets = function(tweets) {
 };
 
 renderTweets(data);
+
+$(document).ready(function() {
+  $(".textField").submit(function(event) {
+    event.preventDefault();
+    const formData = $(this).serialize();
+    $.post("/tweets", formData, function(data) {
+      console.log(formData);
+    });
+  });
+});
