@@ -93,11 +93,20 @@ const renderTweets = function(tweets) {
 $(document).ready(function() {
   $(".textField").submit(function(event) {
     event.preventDefault();
+    const newTweet = $('#tweet-text').val().length;
+    if (!newTweet) {
+      alert("There is nothing to tweet!");
+      return;
+    } else if (newTweet > 140) {
+      alert("Your tweet contains too many characters!");
+      return;
+    } else {
     const formData = $(this).serialize();
     $.post("/tweets", formData, function(data) {
       console.log(formData);
       loadTweets();
-    });
+      });
+    }
   });
 });
 
