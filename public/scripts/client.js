@@ -81,14 +81,15 @@ return $tweet;
 // ]
 
 const renderTweets = function(tweets) {
-  $(document).ready(function() {
     tweets.forEach(tweet => {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     })
-  });
 };
 
-// renderTweets(data);
+const renderNewTweet = function(tweets) {
+  const newestTweet = tweets[tweets.length - 1];
+  $('#tweets-container').prepend(createTweetElement(newestTweet));
+};
 
 $(document).ready(function() {
   $(".textField").submit(function(event) {
@@ -100,14 +101,15 @@ $(document).ready(function() {
     } else if (newTweet > 140) {
       alert("Your tweet contains too many characters!");
       return;
-    } else {
+    }
     const formData = $(this).serialize();
     $.post("/tweets", formData, function(data) {
       console.log(formData);
-      loadTweets();
-      });
-    }
-  });
+      $('#tweet-text').val('');
+      $('.counter').val(140);
+      $.get('/tweets', renderNewTweet);
+    });
+  }); loadTweets();
 });
 
 const loadTweets = function() {
@@ -124,5 +126,3 @@ const loadTweets = function() {
     },
   });
 };
-
-loadTweets();
