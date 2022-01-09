@@ -3,9 +3,10 @@ section, form {
 }
 
 .new-tweet {
+  margin: 1.5em;
   display: flex;
-  align-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 label {
@@ -37,7 +38,8 @@ output {
 
 textarea {
   background-color : #f4f1ec; 
-  border: transparent;
+  border: none;
+  outline: none;
   color: black;
   font-weight: 600;
   font-size: 16px;
@@ -46,4 +48,12 @@ textarea {
 
 .exceedCharLimit {
   color: red;
+}
+
+.error {
+  color: red;
+  border: 3px solid red;
+  width: 100%;
+  height: 3rem;
+  margin: 1.5em;
 }

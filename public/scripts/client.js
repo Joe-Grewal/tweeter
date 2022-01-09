@@ -11,13 +11,13 @@ const createTweetElement = function(tweetData) {
       <header>
         <div class="userAvatar">
           <img src=${tweetData.user.avatars}>
-          <p id="firstName">${tweetData.user.name}</p>
+          <p id="firstName">${escape(tweetData.user.name)}</p>
         </div>
         <div>
-          <p id="userName">${tweetData.user.handle}</p>
+          <p id="userName">${escape(tweetData.user.handle)}</p>
         </div>
       </header>
-      <p class="tweetText">${tweetData.content.text}</p>
+      <p class="tweetText">${escape(tweetData.content.text)}</p>
       <footer>
         <div class="contentFooter">
           <p>${time}</p>
@@ -92,16 +92,21 @@ const renderNewTweet = function(tweets) {
 };
 
 $(document).ready(function() {
+  $('.error').hide();
   $(".textField").submit(function(event) {
     event.preventDefault();
     const newTweet = $('#tweet-text').val().length;
     if (!newTweet) {
-      alert("There is nothing to tweet!");
+      $('.error').html("The tweet is empty!");
+      $('.error').slideDown();
       return;
     } else if (newTweet > 140) {
-      alert("Your tweet contains too many characters!");
+      $('.error').html("Your tweet contains too many characters!");
+      $('.error').slideDown();
       return;
     }
+    $('.error').html("");
+    $('.error').hide();
     const formData = $(this).serialize();
     $.post("/tweets", formData, function(data) {
       console.log(formData);
@@ -125,4 +130,10 @@ const loadTweets = function() {
       console.log("request failed and here's the error", error);
     },
   });
+};
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
