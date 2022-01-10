@@ -4,7 +4,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 
-!["Screenshot of desktop view"](https://github.com/Joe-Grewal/tweeter/blob/main/docs/tweeter-desktop-view.png..jpeg)
+!["Screenshot of desktop view"](https://github.com/Joe-Grewal/tweeter/blob/main/docs/tweeter-desktop-view.png)
 This screenshot displays the desktop view.
 !["Screenshot of mobile view"](https://github.com/Joe-Grewal/tweeter/blob/main/docs/tweeter-mobile-view.png)
 This screenshot displays the mobile view.
