@@ -1,5 +1,6 @@
 .nav-bar {
-  background-color: #4056A1;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
+  background-color: #cfabaa;
   height: 120px;
   width: 100%;
   color: #ffffff;
@@ -29,4 +30,11 @@
   display: flex;
   align-items: center;
   color: red;
+}
+
+@media only screen and (min-width: 1024px) {
+  .nav-bar {
+    background-color: #4056A1;
+    background-image: none;
+  }
 }
